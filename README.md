@@ -7,3 +7,14 @@ In response to the recent changes in accessing critical vulnerability informatio
 
 
 Thinking of ever-evolving threat landscape? Why not  embrace this integration alongside SCAP-based vulnerability management?
+
+
+
+**=**=****=**=****=**=****=**=****=**=****=***
+**=**=****=**=**RUN SEQUENCE**=**=****=**=****
+**=**=****=**=****=**=****=**=****=**=****=***
+1. Run the SCAPService Endpoint and OAuth2 Authenticator (Sample - sampleSCAPServiceEndpoint.py) 
+2. Initiate the CVE Feed from the NVD 2.0 source (Sample - cvefeedInterceptor.py)
+3. Ingest and process the Raw JSON stream to extract the CVE details (example: CVE ID, Base Severity, Description)
+4. Distribute the releavant data stream within the organizational CyberSec realms
+ 
