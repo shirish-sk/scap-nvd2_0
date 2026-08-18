@@ -70,8 +70,10 @@ def get_vuln():
         # Return the clean, live payload
         return jsonify(nvd_data), 200
 
+    # CORRECTED CODE
     except requests.exceptions.RequestException as e:
-        return jsonify({'error': 'Failed to reach NIST NVD API connection
+        return jsonify({'error': 'Failed to reach NIST NVD API connection grid', 'details': str(e)}), 502
+
 
 if __name__ == '__main__':
     # OKD injects the PORT environment variable (usually 8080). Fall back to 8080 if not set.
