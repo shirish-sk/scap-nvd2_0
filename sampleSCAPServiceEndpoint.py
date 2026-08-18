@@ -26,4 +26,6 @@ def get_vulnerabilities():
         return jsonify({'error': 'Unauthorized'}), 401
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    # OKD injects the PORT environment variable (usually 8080). Fall back to 8080 if not set.
+    port = int(os.environ.get("PORT", 8080))
+    app.run(host='0.0.0.0', port=port, debug=True)
