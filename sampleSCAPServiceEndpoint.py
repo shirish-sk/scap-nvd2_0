@@ -69,8 +69,6 @@ def get_vuln():
 
         # Return the clean, live payload
         return jsonify(nvd_data), 200
-
-    # CORRECTED CODE
     except requests.exceptions.RequestException as e:
         return jsonify({'error': 'Failed to reach NIST NVD API connection grid', 'details': str(e)}), 502
 
